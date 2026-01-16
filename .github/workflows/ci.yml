@@ -35,8 +35,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  detect-ui:
+    runs-on: ubuntu-latest
+    outputs:
+      has_ui: ${{ steps.check.outputs.has_ui }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: check
+        name: Detect ui/package.json
+        run: |
+          if [ -f "ui/package.json" ]; then
+            echo "has_ui=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_ui=false" >> "$GITHUB_OUTPUT"
+          fi
+
   ui-tests:
-    if: ${{ hashFiles('ui/package.json') != '' }}
+    needs: detect-ui
+    if: ${{ needs.detect-ui.outputs.has_ui == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
