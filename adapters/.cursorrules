@@ -1,0 +1,5 @@
+# Cursor Rules
+
+- Follow `.agent/rules/ai-assistant-rules.md` and `SECURITY.md`.
+- Keep edits minimal, well-scoped, and placeholder-only for secrets/hosts.
+- Use `PROMPTS/` and `CHECKLISTS/` for structure; save evidence under `examples/`.

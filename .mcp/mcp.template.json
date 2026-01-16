@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "example-server": {
+      "command": "node",
+      "args": [
+        "server.js"
+      ],
+      "env": {
+        "API_BASE_URL": "",
+        "API_TOKEN": "",
+        "ANOTHER_SETTING": ""
+      },
+      "timeoutSeconds": 60
+    }
+  }
+}

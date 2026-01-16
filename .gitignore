@@ -6,3 +6,6 @@ dist/
 coverage/
 playwright-report/
 test-results/
+scratchpad/
+.mcp/mcp.json
+.mcp/local.json
