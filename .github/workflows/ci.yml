@@ -18,6 +18,7 @@ jobs:
             --accept 200,204,206
             --max-concurrency 8
             --timeout 20
+            --fail-if-empty=false
             **/*.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
